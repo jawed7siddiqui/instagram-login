@@ -7,6 +7,31 @@
 
   <a href='https://api.instagram.com/oauth/authorize?client_id=1243213499821699&redirect_uri=https://httpstat.us/200&scope=user_media,user_profile&response_type=code'> Connect to Instagram </a>
 
-
+<!-- AFTER login successfully you'll get redirect with code={token}#_ //only copy code token except ending of #_ 
+  & this code ll be use to generate access token . -->
+  
+<!--   curl --request POST \
+  --url https://api.instagram.com/oauth/access_token \
+  --header 'Content-Type: multipart/form-data' \
+  --form client_id=1243213499821699 \
+  --form client_secret=78c32ff397a21323caacdaea4d8a9fb4 \
+  --form grant_type=authorization_code \
+  --form redirect_uri=https://httpstat.us/200 \
+  --form code=AQB6tHmVdjMD69Qy__vFk8lA4MREXiEaZo_Z8WXj35Zfbvi1o_1n6lLOJ0660a7gQpyqYgNhKODRkI4iE0ZiaI7o8YM6lKKVNTW_w -->
+  
+<!--   You 'll see response line this below --
+  
+  {
+	"access_token": "IGQVJWSHdQVi1iSEdWaDZAyLVFCOGxDeHNwc0k2d0g0NFBwX2hXT1NfMF82YUB",
+	"user_id": 17841494337891157
+} -->
+  
+<!--   use this token get user profile ,media etc -- -->
+  
+<!--   curl --request GET \
+  --url 'https://graph.instagram.com/v14.0/10218560180051171?fields=id,username&access_token=IGQVJWSHdQVi1iSEdWaDZAyLVFCOGxDeHNwc0k2d0g0NFBwX2hXT1NfMF82YUB' \
+  --header 'Content-Type: multipart/form-data' \ -->
+  
+  
 </body>
 </html>
